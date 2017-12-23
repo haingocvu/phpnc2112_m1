@@ -77,6 +77,7 @@ $str = "Hello World.";
  * [^0-9]
  * \D
  * l{2}
+ * \b 
  */
 
  $pattern = '/l{1}/';
@@ -119,6 +120,9 @@ if(preg_match($pattern,$email)){
     echo "match";
 }
 else echo "don't match";
+
+
+
 
 
 ?>
