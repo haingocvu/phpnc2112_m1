@@ -40,7 +40,7 @@ confirm pass: giống pass
                     </div>
                     <div class="form-group">
                         <label for="">Email</label>
-                        <input type="email" id="email" class="form-control" placeholder="example@domain.com" pattern="[a-z0-9_-+]+@[a-z0-9_\-+]+\.[a-z]{2,}"
+                        <input type="email" id="email" class="form-control" placeholder="example@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"
                             required value="huong@gmail.com">
                     </div>
                     <div class="form-group">
@@ -74,7 +74,7 @@ confirm pass: giống pass
                     </div>
                     <div class="form-group">
                         <label for="">Confirm Password:</label>
-                        <input type="text" id="confirm_password" class="form-control" placeholder="Enter password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\+@\-!~\*]).{6,}"
+                        <input type="text" value="hG@@@444" id="confirm_password" class="form-control" placeholder="Enter password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\+@\-!~\*]).{6,}"
                             required>
                     </div>
                     <div class="form-group">
@@ -97,8 +97,8 @@ confirm pass: giống pass
             cf_pw.setCustomValidity('')
         }
     }
-    pw.onchange = checkPw
-    cf_pw.onkeypress = checkPw
+    pw.onchange = checkPw;
+    cf_pw.onkeyup = checkPw;
 
 
     function validate(id, message) {
