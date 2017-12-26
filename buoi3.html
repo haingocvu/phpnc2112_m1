@@ -45,11 +45,13 @@ confirm pass: giống pass
                     </div>
                     <div class="form-group">
                         <label for="">Birthdate</label>
-                        <input type="text" id="birthdate" class="form-control" placeholder="dd-mm-yyyy" pattern="\d{1,2}-\d{1,2}-\d{4}">
+                        <input type="text" id="birthdate" class="form-control" placeholder="dd-mm-yyyy" pattern="\d{1,2}-\d{1,2}-\d{4}" required
+                            value="21-12-2017">
                     </div>
                     <div class="form-group">
                         <label for="">Your website:</label>
-                        <input type="text" id="url" class="form-control" placeholder="https://khoapham.vn" pattern="(^https?:\/\/)[a-zA-Z0-9]+">
+                        <input type="text" id="url" class="form-control" value="https://khoapham.vn" pattern="(^https?:\/\/)[a-z0-9_\-+]+\.[a-z]{2,}"
+                            required>
                     </div>
                     <div class="form-group">
                         <label for="">Gender</label>
@@ -63,15 +65,15 @@ confirm pass: giống pass
                     </div>
                     <div class="form-group">
                         <label for="">Age:</label>
-                        <input type="text" id="age" class="form-control" placeholder="20" pattern="">
+                        <input type="text" id="age" class="form-control" value="20" pattern="\d{1,2}">
                     </div>
                     <div class="form-group">
                         <label for="">Password:</label>
-                        <input type="password" id="password" class="form-control" placeholder="Enter password" pattern="">
+                        <input type="text" id="password" class="form-control" placeholder="Enter password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\+@\-!~\*]).{6,}">
                     </div>
                     <div class="form-group">
                         <label for="">Confirm Password:</label>
-                        <input type="password" id="confirm_password" class="form-control" placeholder="Enter password" pattern="">
+                        <input type="password" id="confirm_password" class="form-control" placeholder="Enter password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\+@\-!~\*]).{6,}">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Sign up</button>
