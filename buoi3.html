@@ -8,16 +8,35 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 </head>
+<!-- 
+fullname: không chứa số, không chứa kí tự đặc biệt, min:10
+email: đúng định dạng @ .
+birthdate: dd-mm-yyyy 
+website: http://dfghj || https://vvvv
+age: phải là số , ko quá 2 chữ số
+pass: phải chứa chữ hoa, phải chứa chứ thường, chứ số, cả kí tự đặc biệt, ít nhất 6 kí tự
+        sdsds WWdddd3  ADcc3$$$
+confirm pass: giống pass
+ -->
+<style>
+    input:invalid {
+        border: 1px dashed red !important
+    }
+
+    input:valid {
+        color: green
+    }
+</style>
 
 <body>
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-md-6">
                 <h3>Sign Up</h3>
-                <form action="">
+                <form action="" method="post">
                     <div class="form-group">
                         <label for="">Fulname</label>
-                        <input type="text" id="fullname" class="form-control" placeholder="Enter fullname" pattern="">
+                        <input type="text" id="fullname" class="form-control" placeholder="Enter fullname" pattern="[\w\s]{10,}" required>
                     </div>
                     <div class="form-group">
                         <label for="">Email</label>
@@ -35,10 +54,10 @@
                         <label for="">Gender</label>
                         <br>
                         <label>
-                            <input type="radio" id="gender" value="male" name="gender"> Male
+                            <input type="radio" id="gender" value="male" name="gender" required> Male
                         </label>
                         <label>
-                            <input type="radio" id="gender" value="female" name="gender"> Female
+                            <input type="radio" id="gender" value="female" name="gender" required> Female
                         </label>
                     </div>
                     <div class="form-group">
