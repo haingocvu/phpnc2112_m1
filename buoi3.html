@@ -69,11 +69,13 @@ confirm pass: giống pass
                     </div>
                     <div class="form-group">
                         <label for="">Password:</label>
-                        <input type="text" id="password" class="form-control" placeholder="Enter password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\+@\-!~\*]).{6,}">
+                        <input value="hG@@@444" type="text" id="password" class="form-control" placeholder="Enter password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\+@\-!~\*]).{6,}"
+                            required>
                     </div>
                     <div class="form-group">
                         <label for="">Confirm Password:</label>
-                        <input type="password" id="confirm_password" class="form-control" placeholder="Enter password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\+@\-!~\*]).{6,}">
+                        <input type="text" id="confirm_password" class="form-control" placeholder="Enter password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\+@\-!~\*]).{6,}"
+                            required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Sign up</button>
@@ -84,5 +86,30 @@ confirm pass: giống pass
     </div>
 
 </body>
+<script>
+    var pw = document.getElementById('password');
+    var cf_pw = document.getElementById('confirm_password')
+
+    function checkPw() {
+        if (pw.value != cf_pw.value) {
+            cf_pw.setCustomValidity('Not same pw!')
+        } else {
+            cf_pw.setCustomValidity('')
+        }
+    }
+    pw.onchange = checkPw
+    cf_pw.onkeypress = checkPw
+
+
+    function validate(id, message) {
+        var input = document.getElementById(id);
+        input.oninvalid = function (event) {
+            event.target.setCustomValidity(message)
+        }
+    }
+
+    validate('password', "Pw đúng định dạng")
+    validate('age', "Age is not valid!")
+</script>
 
 </html>
