@@ -38,13 +38,22 @@ $xml = simplexml_load_string($str);
 // }
 
 foreach($xml->children() as $book){
+    $author = $book->author;
+    foreach($author as $tacgia){
+       echo $tacgia['dob'];
+    }
+    // echo "<pre>";
+    // print_r($author);
+    // echo "</pre>";
+    echo '<br>';
+
     foreach($book->year as $date){
         //print_r($date);
         echo $date->day.'/'.$date->month.'/'.$date->year;
     }
-    echo "<br>";
+    echo "<hr>";
 }
-
+die;
 
 echo "<hr>";
 $xml = simplexml_load_file('demo.xml');
