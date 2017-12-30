@@ -32,6 +32,7 @@ class hs extends hocsinh{
     }
 
     public function __destruct(){
+        
         echo "<br>class ".get_class(). ' vừa bị huỷ';
     }
 
@@ -54,6 +55,9 @@ $hs->setAge(12);
 echo $hs->age;
 echo "<br>";
 echo $hs->getGender();
+
+
+
 
 
 ?>
