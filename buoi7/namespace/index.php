@@ -1,7 +1,7 @@
 <?php
 require_once('namespace1.php');
 require_once('namespace2.php');
-use folder1\folder2\folder3 as n2;
+use folder1\folder2\folder3 as A;
 
 $a = new space1\A;
 
@@ -10,11 +10,11 @@ space1\getData();
 
 
 echo "<br>";
-$b = new n2\A(2);
+$b = new A\A(2);
 
 echo "<br>";
-n2\A1();
+A\A1();
 
-echo "<br>";
-n2\A2();
+// echo "<br>";
+// n2\A2();
 ?>
