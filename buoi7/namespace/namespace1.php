@@ -5,3 +5,9 @@ class A{
         echo "Lop A duoc khoi tao";
     }
 }
+
+
+
+function getData(){
+    echo "function getData was called";
+}
