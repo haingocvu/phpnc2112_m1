@@ -18,36 +18,36 @@ class Connect{
     }
     function executeQuery($sql, $params = []){
 
-            $this->stmt = $this->db->prepare($sql);
+        $this->stmt = $this->db->prepare($sql);
 
-            //INSERT INTO users(`username`,`password`,address,phone,birthdate)
-            //VALUES(?,?,?,?,?)
+        //INSERT INTO users(`username`,`password`,address,phone,birthdate)
+        //VALUES(?,?,?,?,?)
 
-            if(!empty($params)){
-                $count = count($params);
-                for($i=1; $i<=$count; $i++){
-                    $this->stmt->bindParam($i, $params[$i-1]);
-                } 
-            }
-            return $this->stmt->execute();
+        if(!empty($params)){
+            $count = count($params);
+            for($i=1; $i<=$count; $i++){
+                $this->stmt->bindParam($i, $params[$i-1]);
+            } 
+        }
+        return $this->stmt->execute();
 
-        }
-        function loadMoreRows($sql, $params = []){
-            $this->executeQuery($sql, $params);
-            return $this->stmt->fetchAll(PDO::FETCH_OBJ);
-        }
+    }
+    function loadMoreRows($sql, $params = []){
+        $this->executeQuery($sql, $params);
+        return $this->stmt->fetchAll(PDO::FETCH_OBJ);
+    }
 
-        function loadRow($sql, $params = []){
-            $this->executeQuery($sql, $params);
-            return $this->stmt->fetch(PDO::FETCH_OBJ);
-        }
-        function rowCount(){
-            //return $this->stmt->rowCount();
-        }
+    function loadRow($sql, $params = []){
+        $this->executeQuery($sql, $params);
+        return $this->stmt->fetch(PDO::FETCH_OBJ);
+    }
+    function rowCount(){
+        //return $this->stmt->rowCount();
+    }
 
-        function getLastId(){
-            return $this->db->lastInsertId();
-        }
+    function getLastId(){
+        return $this->db->lastInsertId();
+    }
 }
 
 $c = new Connect;
