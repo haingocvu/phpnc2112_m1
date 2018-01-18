@@ -141,10 +141,6 @@ ALTER TABLE `foods`
 --
 -- Constraints for table `foods`
 --
-ALTER TABLE `foods`
-  ADD CONSTRAINT `foods_ibfk_1` FOREIGN KEY (`id_type`) REFERENCES `food_type` (`id`),
-  ADD CONSTRAINT `foods_ibfk_2` FOREIGN KEY (`id_url`) REFERENCES `page_url` (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
